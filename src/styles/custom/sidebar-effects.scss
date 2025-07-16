@@ -1,0 +1,209 @@
+/* ===== SIDEBAR ANIMATION EFFECTS ===== */
+
+/* Smooth transitions for sidebar toggle */
+.vertical-menu {
+  transition: all 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+/* Sidebar main content margin transitions */
+.main-content {
+  transition: margin-left 0.3s ease-in-out, margin-right 0.3s ease-in-out;
+}
+
+/* Menu item transitions */
+#side-menu li a {
+  transition: all 0.15s ease-linear;
+  position: relative;
+  overflow: hidden;
+}
+
+#side-menu li a:hover {
+  transform: translateX(2px);
+}
+
+/* Category label animations */
+#side-menu li.px-5 {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.group[data-sidebar-size="sm"] #side-menu li.px-5 {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+/* Menu text animations for collapsed state */
+#side-menu li a span {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.group[data-sidebar-size="sm"] #side-menu li a span {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+/* Icon animations */
+#side-menu li a i,
+#side-menu li a svg {
+  transition: transform 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group[data-sidebar-size="sm"] #side-menu li a i,
+.group[data-sidebar-size="sm"] #side-menu li a svg {
+  transform: scale(1.1);
+}
+
+/* Submenu animations */
+#side-menu li ul {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+#side-menu li ul li a {
+  transition: all 0.2s ease-linear;
+}
+
+#side-menu li ul li a:hover {
+  padding-left: calc(52.8px + 4px);
+}
+
+/* Active menu item effects */
+#side-menu li a.active {
+  position: relative;
+}
+
+#side-menu li a.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: rgb(139 92 246);
+  transition: width 0.3s ease-in-out;
+}
+
+/* Hover effects for menu items */
+#side-menu li a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(139, 92, 246, 0.1);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: slideIn 0.3s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Custom scrollbar styling for SimpleBar */
+.simplebar-scrollbar::before {
+  background: rgb(139 92 246 / 0.4) !important;
+  border-radius: 6px !important;
+  opacity: 0.6 !important;
+}
+
+.simplebar-scrollbar:hover::before {
+  background: rgb(139 92 246 / 0.8) !important;
+  opacity: 1 !important;
+}
+
+.simplebar-track {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 6px !important;
+}
+
+.dark .simplebar-track {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .simplebar-scrollbar::before {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.dark .simplebar-scrollbar:hover::before {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Sidebar fade in/out effect */
+.vertical-menu.sidebar-animate {
+  animation: sidebarFadeIn 0.3s ease-in-out;
+}
+
+@keyframes sidebarFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile sidebar overlay effect */
+@media (max-width: 991px) {
+  body.sidebar-enable .vertical-menu {
+    transform: translateX(0);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  body:not(.sidebar-enable) .vertical-menu {
+    transform: translateX(-100%);
+  }
+  
+  /* Mobile overlay backdrop */
+  body.sidebar-enable::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Promo section animation */
+.sidebar-alert {
+  transition: all 0.3s ease-in-out;
+}
+
+.group[data-sidebar-size="sm"] .sidebar-alert {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+/* Badge animations */
+.badge {
+  transition: all 0.3s ease-in-out;
+}
+
+.group[data-sidebar-size="sm"] .badge {
+  opacity: 0;
+  transform: scale(0.5);
+}

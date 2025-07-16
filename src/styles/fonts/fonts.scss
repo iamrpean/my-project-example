@@ -1,0 +1,108 @@
+/* ===== CUSTOM FONTS ===== */
+
+/* Example: Import custom font from public/fonts/ */
+/*
+@font-face {
+  font-family: 'YourCustomFont';
+  src: url('/fonts/your-font.woff2') format('woff2'),
+       url('/fonts/your-font.woff') format('woff'),
+       url('/fonts/your-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YourCustomFont';
+  src: url('/fonts/your-font-bold.woff2') format('woff2'),
+       url('/fonts/your-font-bold.woff') format('woff'),
+       url('/fonts/your-font-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+/* ===== EXISTING ICON FONTS ===== */
+
+/* BoxIcons */
+@font-face {
+  font-family: 'boxicons';
+  src: url('/fonts/boxicons.woff2') format('woff2'),
+       url('/fonts/boxicons.woff') format('woff'),
+       url('/fonts/boxicons.ttf') format('truetype'),
+       url('/fonts/boxicons.eot');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Dripicons */
+@font-face {
+  font-family: 'dripicons-v2';
+  src: url('/fonts/dripicons-v2.woff2') format('woff2'),
+       url('/fonts/dripicons-v2.woff') format('woff'),
+       url('/fonts/dripicons-v2.ttf') format('truetype'),
+       url('/fonts/dripicons-v2.eot');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font Awesome */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  src: url('/fonts/fa-solid-900.woff2') format('woff2'),
+       url('/fonts/fa-solid-900.woff') format('woff'),
+       url('/fonts/fa-solid-900.ttf') format('truetype'),
+       url('/fonts/fa-solid-900.eot');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  src: url('/fonts/fa-brands-400.woff2') format('woff2'),
+       url('/fonts/fa-brands-400.woff') format('woff'),
+       url('/fonts/fa-brands-400.ttf') format('truetype'),
+       url('/fonts/fa-brands-400.eot');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Regular';
+  src: url('/fonts/fa-regular-400.woff2') format('woff2'),
+       url('/fonts/fa-regular-400.woff') format('woff'),
+       url('/fonts/fa-regular-400.ttf') format('truetype'),
+       url('/fonts/fa-regular-400.eot');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Material Design Icons */
+@font-face {
+  font-family: 'Material Design Icons';
+  src: url('/fonts/materialdesignicons-webfont.woff2') format('woff2'),
+       url('/fonts/materialdesignicons-webfont.woff') format('woff'),
+       url('/fonts/materialdesignicons-webfont.ttf') format('truetype'),
+       url('/fonts/materialdesignicons-webfont.eot');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Tabler Icons */
+@font-face {
+  font-family: 'tabler-icons';
+  src: url('/fonts/tabler-icons.woff2') format('woff2'),
+       url('/fonts/tabler-icons.woff') format('woff'),
+       url('/fonts/tabler-icons.ttf') format('truetype'),
+       url('/fonts/tabler-icons.eot');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

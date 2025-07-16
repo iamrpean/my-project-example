@@ -1,0 +1,17 @@
+
+body {
+    @apply font-sans overflow-x-hidden text-base;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.collapse {
+    display: block;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+}
+
+.collapse.show {
+    max-height: 99em;
+    transition: max-height .5s ease-in-out;
+}
