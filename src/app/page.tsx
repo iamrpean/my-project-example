@@ -1,12 +1,112 @@
 'use client';
 
 import React from 'react';
-import { Layout, PageHeader, TabsInPills, DataTable } from '@/components';
+import { Layout, PageHeader, TabsInPills, DataTable, ContractCard } from '@/components';
 import { User, Edit, File, FileText } from 'react-feather';
 
 export default function HomePage() {
   const breadcrumbs = [
     { label: 'Dashboard', active: true }
+  ];
+
+  // Dummy data for contract cards
+  const contractsData = [
+    {
+      title: "PT Alex Estate Production",
+      contractNumber: "001-06/IV/MBI-2025",
+      contractDate: "25.01.2024 - 25.01.2025",
+      startDate: "25.01.2024",
+      endDate: "25.01.2025",
+      progress: 28,
+      progressLabel: "EAST",
+      totalRemaining: {
+        processed: 365,
+        total: 365,
+        remaining: 150
+      },
+      financialData: {
+        cost: "5,000,000,000 ₽",
+        paid: "140,000,000 ₽",
+        directExpenses: "3,500,000,000 ₽",
+        grossProfit: "1,500,000,000 ₽",
+        balance: "-1,360,000,000 ₽",
+        todayPenalty: "0 ₽",
+        penaltyDays: "90,000,000 ₽",
+        maximumPenalty: "500,000,000 ₽"
+      }
+    },
+    {
+      title: "PT Amadeus Rock Reality",
+      contractNumber: "002-08/IV/MBI-2024",
+      contractDate: "25.03.2024 - 25.08.2024",
+      startDate: "25.03.2024",
+      endDate: "25.08.2024",
+      progress: 70,
+      progressLabel: "EAST",
+      totalRemaining: {
+        processed: 180,
+        total: 180,
+        remaining: 100
+      },
+      financialData: {
+        cost: "278,000,000 ₽",
+        paid: "180,000,000 ₽",
+        directExpenses: "180,000,000 ₽",
+        grossProfit: "98,000,000 ₽",
+        balance: "98,000,000 ₽",
+        todayPenalty: "0 ₽",
+        penaltyDays: "270,000 ₽",
+        maximumPenalty: "27,800,000 ₽"
+      }
+    },
+    {
+      title: "PT Global Tech Solutions",
+      contractNumber: "003-12/V/MBI-2024",
+      contractDate: "15.05.2024 - 15.12.2024",
+      startDate: "15.05.2024",
+      endDate: "15.12.2024",
+      progress: 45,
+      progressLabel: "WEST",
+      totalRemaining: {
+        processed: 210,
+        total: 210,
+        remaining: 125
+      },
+      financialData: {
+        cost: "850,000,000 ₽",
+        paid: "320,000,000 ₽",
+        directExpenses: "450,000,000 ₽",
+        grossProfit: "400,000,000 ₽",
+        balance: "80,000,000 ₽",
+        todayPenalty: "0 ₽",
+        penaltyDays: "150,000 ₽",
+        maximumPenalty: "85,000,000 ₽"
+      }
+    },
+    {
+      title: "PT Innovation Hub Corp",
+      contractNumber: "004-03/VI/MBI-2025",
+      contractDate: "10.02.2024 - 10.09.2024",
+      startDate: "10.02.2024",
+      endDate: "10.09.2024",
+      progress: 85,
+      progressLabel: "NORTH",
+      totalRemaining: {
+        processed: 240,
+        total: 240,
+        remaining: 45
+      },
+      financialData: {
+        cost: "1,200,000,000 ₽",
+        paid: "950,000,000 ₽",
+        directExpenses: "800,000,000 ₽",
+        grossProfit: "400,000,000 ₽",
+        balance: "150,000,000 ₽",
+        todayPenalty: "0 ₽",
+        penaltyDays: "75,000 ₽",
+        maximumPenalty: "120,000,000 ₽"
+      }
+    }
   ];
 
   // Dummy data for transactions table
@@ -401,6 +501,27 @@ export default function HomePage() {
       
       {/* Main Content Area */}
       <div className="grid grid-cols-1 gap-6">
+
+        {/* Contract Cards Section */}
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Active Contracts</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+            {contractsData.map((contract, index) => (
+              <ContractCard
+                key={index}
+                title={contract.title}
+                contractNumber={contract.contractNumber}
+                contractDate={contract.contractDate}
+                startDate={contract.startDate}
+                endDate={contract.endDate}
+                progress={contract.progress}
+                progressLabel={contract.progressLabel}
+                totalRemaining={contract.totalRemaining}
+                financialData={contract.financialData}
+              />
+            ))}
+          </div>
+        </div>
 
         {/* Tabs in Pills Component */}
         <div className="p-6 bg-white rounded-lg shadow dark:bg-zinc-800">

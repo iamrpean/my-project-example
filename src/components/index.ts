@@ -9,6 +9,7 @@ export { default as Layout } from './Layout';
 export { default as BarWithUnderline } from './BarWithUnderline';
 export { TabsInPills } from './TabsInPills';
 export { DataTable } from './DataTable';
+export { default as ContractCard } from './ContractCard';
 
 // Re-export types
 export type { NavigationItem, SidebarProps } from '@/types/navigation';
