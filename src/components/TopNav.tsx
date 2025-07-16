@@ -79,7 +79,7 @@ const TopNav: React.FC<TopNavProps> = ({
         <div className="flex items-center justify-between w-full border-b border-[#e9e9ef] dark:border-zinc-600 ltr:pl-6 rtl:pr-6">
           {/* Logo */}
           <div className="flex items-center mr-4">
-            <Image 
+            <img 
               src="/logo.png" 
               alt="Logo" 
               width={32}
