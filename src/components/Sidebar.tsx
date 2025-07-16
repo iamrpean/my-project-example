@@ -4,10 +4,12 @@ import React, { useEffect, useRef } from 'react';
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 import NavigationItemComponent from './NavigationItem';
-import SidebarPromo from './SidebarPromo';
 import { SidebarProps } from '@/types/navigation';
 import { defaultNavigationItems, menuCategories } from '@/constants/navigation';
 import { usePathname } from 'next/navigation';
+
+// Use a more specific type for SimpleBar ref
+type SimpleBarRef = React.ComponentRef<typeof SimpleBar>;
 
 const Sidebar: React.FC<SidebarProps> = ({
   navigationItems = defaultNavigationItems,
@@ -16,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   onItemClick
 }) => {
   const pathname = usePathname();
-  const scrollableNodeRef = useRef<any>(null);
+  const scrollableNodeRef = useRef<SimpleBarRef>(null);
   
   // Group navigation items by categories
   const groupedItems = menuCategories.map(category => ({

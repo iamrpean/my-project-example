@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import * as FeatherIcons from 'react-feather';
 import { useLayoutState } from '@/hooks/useLayoutState';
 
@@ -78,9 +79,11 @@ const TopNav: React.FC<TopNavProps> = ({
         <div className="flex items-center justify-between w-full border-b border-[#e9e9ef] dark:border-zinc-600 ltr:pl-6 rtl:pr-6">
           {/* Logo */}
           <div className="flex items-center mr-4">
-            <img 
+            <Image 
               src="/logo.png" 
               alt="Logo" 
+              width={32}
+              height={32}
               className="h-8 w-auto"
             />
           </div>
@@ -160,9 +163,11 @@ const TopNav: React.FC<TopNavProps> = ({
                   setIsProfileOpen(false);
                 }}
               >
-                <img 
+                <Image 
                   src={currentLanguage.flag} 
                   alt={currentLanguage.name} 
+                  width={20}
+                  height={16}
                   className="w-5 h-4 rounded shadow-sm" 
                 />
               </button>
@@ -180,9 +185,11 @@ const TopNav: React.FC<TopNavProps> = ({
                             : 'text-gray-700 dark:text-gray-200'
                         }`}
                       >
-                        <img 
+                        <Image 
                           src={language.flag} 
                           alt={language.name}
+                          width={20}
+                          height={16}
                           className="w-5 h-4 rounded mr-3 shadow-sm" 
                         />
                         <span className="font-medium">{language.name}</span>
@@ -248,10 +255,12 @@ const TopNav: React.FC<TopNavProps> = ({
                   setIsLanguageOpen(false);
                 }}
               >
-                <img 
+                <Image 
                   className="w-8 h-8 rounded-full ring-2 ring-gray-200 dark:ring-zinc-600" 
                   src="/images/users/avatar-1.jpg" 
                   alt="User"
+                  width={32}
+                  height={32}
                 />
                 <div className="ml-3 hidden lg:block text-left">
                   <div className="text-sm font-medium text-gray-700 dark:text-gray-100">
@@ -270,10 +279,12 @@ const TopNav: React.FC<TopNavProps> = ({
                     {/* Profile Header */}
                     <div className="px-4 py-3 border-b border-gray-100 dark:border-zinc-700">
                       <div className="flex items-center">
-                        <img 
+                        <Image 
                           className="w-10 h-10 rounded-full ring-2 ring-gray-200 dark:ring-zinc-600" 
                           src="/images/users/avatar-1.jpg" 
                           alt="User"
+                          width={40}
+                          height={40}
                         />
                         <div className="ml-3">
                           <p className="text-sm font-medium text-gray-900 dark:text-gray-100">Alex Sanbaev</p>

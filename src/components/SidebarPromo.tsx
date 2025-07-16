@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 interface SidebarPromoProps {
   title?: string;
@@ -22,9 +23,11 @@ const SidebarPromo: React.FC<SidebarPromoProps> = ({
   return (
     <div className={`mx-6 my-12 text-center sidebar-alert transition-all duration-300 ease-in-out group-data-[sidebar-size=sm]:opacity-0 group-data-[sidebar-size=sm]:scale-75 group-data-[sidebar-size=sm]:pointer-events-none ${className}`}>
       <div className="rounded card-body bg-primary bg-violet-50/50 dark:bg-zinc-700/60">
-        <img 
+        <Image 
           src={imageUrl} 
-          alt="" 
+          alt="Promo image" 
+          width={94}
+          height={65}
           className="block mx-auto"
         />
         <div className="mt-4">

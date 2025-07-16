@@ -12,8 +12,6 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({
   className = "",
   companyName = "EURASTROY",
-  designedBy = "Themesbrand",
-  designedByUrl = "#"
 }) => {
   const currentYear = new Date().getFullYear();
 

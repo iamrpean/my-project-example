@@ -2,15 +2,19 @@
 
 import React, { useEffect, useRef } from 'react';
 
+interface DataTableRecord {
+  [key: string]: unknown;
+}
+
 interface DataTableColumn {
   key: string;
   title: string;
-  render?: (value: any, record: any) => React.ReactNode;
+  render?: (value: unknown, record: DataTableRecord) => React.ReactNode;
 }
 
 interface DataTableProps {
   columns: DataTableColumn[];
-  data: any[];
+  data: DataTableRecord[];
   searchable?: boolean;
   pageSize?: number;
 }
@@ -50,10 +54,14 @@ export const DataTable: React.FC<DataTableProps> = ({
       const aValue = a[sortConfig.key];
       const bValue = b[sortConfig.key];
 
-      if (aValue < bValue) {
+      // Convert to string for comparison if not null/undefined
+      const aStr = aValue?.toString() ?? '';
+      const bStr = bValue?.toString() ?? '';
+
+      if (aStr < bStr) {
         return sortConfig.direction === 'asc' ? -1 : 1;
       }
-      if (aValue > bValue) {
+      if (aStr > bStr) {
         return sortConfig.direction === 'asc' ? 1 : -1;
       }
       return 0;
@@ -89,7 +97,7 @@ export const DataTable: React.FC<DataTableProps> = ({
             <select 
               className="px-3 py-1 text-sm border border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"
               value={pageSize}
-              onChange={(e) => setCurrentPage(1)}
+              onChange={() => setCurrentPage(1)}
             >
               <option value={10}>10</option>
               <option value={25}>25</option>
@@ -151,7 +159,7 @@ export const DataTable: React.FC<DataTableProps> = ({
                   >
                     {column.render ? 
                       column.render(record[column.key], record) : 
-                      record[column.key]
+                      String(record[column.key] ?? '')
                     }
                   </td>
                 ))}

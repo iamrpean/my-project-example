@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Layout, PageHeader, BarWithUnderline, TabsInPills, DataTable } from '@/components';
-import Link from 'next/link';
+import { Layout, PageHeader, TabsInPills, DataTable } from '@/components';
 import { User, Edit, File, FileText } from 'react-feather';
 
 export default function HomePage() {

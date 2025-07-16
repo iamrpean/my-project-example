@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({
     children,
     className = ""
 }) => {
-    const { layoutState, toggleSidebar, toggleDirection } = useLayoutState();
+    const { layoutState, toggleSidebar } = useLayoutState();
 
     return (
         <div className={`min-h-screen bg-gray-50 dark:bg-zinc-700 group ${className}`} data-mode={layoutState.mode} data-sidebar-size={layoutState.sidebarSize}>
